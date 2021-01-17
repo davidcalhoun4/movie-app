@@ -1,9 +1,8 @@
 class Api::StarsController < ApplicationController
 
   def actor_action
-    @actor = Actor.take(2)
-    render "stars.json.jb"
+    @actor = Actor.find_by(id: params["id"])
+    render "actor.json.jb"
   end
 
 end
-# @actor = Actor.find_by(id: 1)
