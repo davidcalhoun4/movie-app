@@ -7,8 +7,18 @@ Rails.application.routes.draw do
   #   get "/photos" => "photos#index"
   # end
   namespace :api do
-    get "/actor_query_path" => "stars#actor_action"
-    get "/actor_segment_path/:id" => "stars#actor_action"
+    get "/actors" => "stars#index"
+    post "/actors" => "stars#create"
+    get "/actors/:id" => "stars#show"
+    patch "/actors/:id" => "stars#update"
+    delete "actors/:id" => "stars#destroy"
+
+    get "/movies" => "movies#index"
+    post "/movies" => "movies#create"
+    get "/movies/:id" => "movies#show"
+    patch "/movies/:id" => "movies#update"
+    delete "/movies/:id" => "movies#destroy"
+
   end
 
 end
