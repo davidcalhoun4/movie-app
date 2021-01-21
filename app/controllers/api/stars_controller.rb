@@ -13,8 +13,12 @@ class Api::StarsController < ApplicationController
       gender: params[:gender],
       age: params[:age]
     )
-    @actor.save 
-    render "show.json.jb"
+    if @actor.save 
+      render "show.json.jb"
+    else 
+      render json: { errors: @actor.erros.full_messages }, status: :unprocessable_entity
+    end
+
   end
 
 
@@ -34,8 +38,11 @@ class Api::StarsController < ApplicationController
     @actor.gender = params[:gender] || @actor.gender
     @actor.age = params[:age] || @actor.age 
 
-    @actor.save 
-    render "show.json.jb"
+    if @actor.save 
+      render "show.json.jb"
+    else 
+      render json: { errors: @actor.erros.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def destroy
