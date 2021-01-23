@@ -1,7 +1,10 @@
 class Api::MoviesController < ApplicationController
 
   def index
-    @movies = Movie.all 
+    #@movies = Movie.all 
+
+    #Make the Movie index action only show movies that are in english.
+    @movies = Movie.where(english: true)
     render "index.json.jb"
   end
 

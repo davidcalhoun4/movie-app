@@ -1,7 +1,10 @@
 class Api::StarsController < ApplicationController
 
   def index
-    @actors = Actor.all 
+    #@actors = Actor.all 
+    #Change your Actor index action to sort actors by eldest to youngest.
+
+    @actors = Actor.all.order(:age => :desc)
     render "index.json.jb"
   end
 
