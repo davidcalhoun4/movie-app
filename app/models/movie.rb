@@ -8,6 +8,8 @@ class Movie < ApplicationRecord
 
   validates :director, presence: true 
 
+  has_many :actors 
+
 
 
   #title year plot director
