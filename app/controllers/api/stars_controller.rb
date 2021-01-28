@@ -1,5 +1,7 @@
 class Api::StarsController < ApplicationController
 
+  before_action :authenticate_admin, except: [:index, :show]
+  
   def index
     #@actors = Actor.all 
     #Change your Actor index action to sort actors by eldest to youngest.
