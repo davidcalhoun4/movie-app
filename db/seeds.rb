@@ -8,3 +8,9 @@
 
 actor = Actor.new({first_name: "Benedict", last_name: "Cumberbatch", known_for: "Sherlock"})
 actor.save 
+
+MovieGenre.create(genre_id: 2, movie_id: 1)
+MovieGenre.create(genre_id: 3, movie_id: 2)
+MovieGenre.create(genre_id: 3, movie_id: 3)
+MovieGenre.create(genre_id: 4, movie_id: 4)
+MovieGenre.create(genre_id: 5, movie_id: 7)
