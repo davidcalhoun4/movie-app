@@ -6,7 +6,7 @@ class Api::MoviesController < ApplicationController
     #@movies = Movie.all 
 
     #Make the Movie index action only show movies that are in english.
-    @movies = Movie.where(english: true)
+    @movies = Movie.where("english = ?", true).order(title: :asc)
     render "index.json.jb"
   end
 
@@ -32,7 +32,7 @@ class Api::MoviesController < ApplicationController
   end
 
   def update
-    @movie = Movie.find_by(id: params[:id])
+    @movie = Movie.find(params[:id])
 
     @movie.title = params[:title] || @movie.title
     @movie.year = params[:year] || @movie.year
