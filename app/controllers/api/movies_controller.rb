@@ -1,12 +1,12 @@
 class Api::MoviesController < ApplicationController
 
-  before_action :authenticate_admin, except: [:index, :show]
+  # before_action :authenticate_admin, except: [:index, :show]
   
   def index
-    #@movies = Movie.all 
+    @movies = Movie.all 
 
     #Make the Movie index action only show movies that are in english.
-    @movies = Movie.where("english = ?", true).order(title: :asc)
+    # @movies = Movie.where("english = ?", true).order(title: :asc)
     render "index.json.jb"
   end
 
