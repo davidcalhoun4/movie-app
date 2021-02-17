@@ -14,14 +14,16 @@ Genre.create!([
   {name: "Action"},
   {name: "Sci-fi"}
 ])
-MovieGenre.create!([
-  {genre_id: 2, movie_id: 1},
-  {genre_id: 3, movie_id: 2},
-  {genre_id: 3, movie_id: 3},
-  {genre_id: 4, movie_id: 4},
-  {genre_id: 5, movie_id: 7},
-  {genre_id: 1, movie_id: 1}
-])
+
+# MovieGenre.create!([
+#   {genre_id: 2, movie_id: 1},
+#   {genre_id: 3, movie_id: 2},
+#   {genre_id: 3, movie_id: 3},
+#   {genre_id: 4, movie_id: 4},
+#   {genre_id: 5, movie_id: 7},
+#   {genre_id: 1, movie_id: 1}
+# ])
+
 Actor.create!([
   {first_name: "Jane", last_name: "Fonda", known_for: "Grace & Frankie", gender: "woman", age: 83, movie_id: 7},
   {first_name: "Nathan", last_name: "Fillion", known_for: "Firefly", gender: "male", age: 49, movie_id: 1},
