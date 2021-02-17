@@ -1,5 +1,5 @@
 class RemoveDirectorFromMovies < ActiveRecord::Migration[6.0]
   def change
-    remove_column :movies, :director, :string
+    # remove_column :movies, :director, :string
   end
 end
